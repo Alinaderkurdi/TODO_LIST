@@ -1,0 +1,7 @@
+.main-show-todo {
+    width : 50%;
+    height: 600px;
+    border: 1px red solid;
+    margin: 10px auto;
+    border-radius: 5px;
+}

@@ -1,0 +1,12 @@
+.singel-main {
+    width: 98%;
+    height: 60px;
+    background-color: red;
+    margin: 5px auto;
+    border-radius: 5px;
+    margin-top: 0;
+}
+
+.show-text{
+    color:yellow;
+}
