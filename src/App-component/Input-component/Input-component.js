@@ -9,22 +9,31 @@ const GetUserInput = (prop)=>{
     const getUserData = useRef()
     const [checkValidationInputFild , validatorChecker] = useState(true)
     const [placeholderStateText , placeholderStateUpDater]  = useState('ADD NEW !')
-    
+
+    let TodoObject = {}
+
+    let getNexValue ;
+
     const inputValidation = (input)=>{
         if (input.length === 0 || !input.trim()){
            validatorChecker(false)
-           console.log('inValid user input')
+           getNexValue = false;
+           //console.log('inValid user input')
            placeholderStateUpDater('Plase add valid input')
         }else{
             validatorChecker(true)
+            getNexValue = true ;
+            placeholderStateText('Now add task!!')
             console.log('valid input')
         }
     }
 
+
+
     const sendToPrent = ()=>{
         inputValidation(getUserData.current.value)
-        checkValidationInputFild ? prop.onGetuserValue(getUserData.current.value) : validatorChecker(false)
-        getUserData.current.value = '';
+       //checkValidationInputFild ? prop.onGetuserValue(getUserData.current.value) : validatorChecker(false)
+       //getUserData.current.value = '';
     }
 
     return (

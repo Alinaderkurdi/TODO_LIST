@@ -1,5 +1,6 @@
 .main-show-todo {
     width : 50%;
+    max-width: 564px;
     height: 600px;
     border: 1px red solid;
     margin: 10px auto;
