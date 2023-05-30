@@ -1,45 +1,18 @@
    
-import React  , { useState ,useRef}from 'react';
+import React , { useRef, useState } from 'react';
 import style from  './Input-component.module.css';
 
 
 
-const GetUserInput = (prop)=>{
-
-    const getUserData = useRef()
-    const [checkValidationInputFild , validatorChecker] = useState(true)
-    const [placeholderStateText , placeholderStateUpDater]  = useState('ADD NEW !')
-
-    let TodoObject = {}
-
-    let getNexValue ;
-
-    const inputValidation = (input)=>{
-        if (input.length === 0 || !input.trim()){
-           validatorChecker(false)
-           getNexValue = false;
-           //console.log('inValid user input')
-           placeholderStateUpDater('Plase add valid input')
-        }else{
-            validatorChecker(true)
-            getNexValue = true ;
-            placeholderStateText('Now add task!!')
-            console.log('valid input')
-        }
-    }
-
-
-
-    const sendToPrent = ()=>{
-        inputValidation(getUserData.current.value)
-       //checkValidationInputFild ? prop.onGetuserValue(getUserData.current.value) : validatorChecker(false)
-       //getUserData.current.value = '';
-    }
-
+const GetUserInput = ()=>{
+    const [inputPlaseHolderState , inputPlaseHolderUpDater] = useState('')
+    const inputFildRefrence = useRef()
+    console.log(inputFildRefrence.current)
+    console.log('print something')
     return (
         <div className={style['get-user-input-main']}>
-            <input className={`${style['input-fild']} ${checkValidationInputFild ? '' : style['invalid-userInput']}`} placeholder={placeholderStateText}  ref={getUserData} />
-            <button className={style['button-style']} onClick={sendToPrent}>ADD</button>
+            <input className={`${style['input-fild']}`}  ref={inputFildRefrence} placeholder={inputPlaseHolderState}/>
+            <button className={style['button-style']}>ADD</button>
         </div>
     )
 }

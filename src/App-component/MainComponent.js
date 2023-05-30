@@ -11,16 +11,12 @@ import ShowToDOBox from './ShowToDo/ShowToDoBox';
 
 const MainComponent  = ()=>{
 
-    const [userInputValue , stateUpdater] = useState()
-
-    const getUserInputFromChild = (value)=>{
-       // console.log(value)
-        stateUpdater(value)
-    }
+   useState()
+   
    return (
     <div className={style['main-component']}>
-        <GetUserInput onGetuserValue={getUserInputFromChild} />
-        <ShowToDOBox data={userInputValue}/>
+        <GetUserInput />
+        <ShowToDOBox />
     </div>
   
    )
