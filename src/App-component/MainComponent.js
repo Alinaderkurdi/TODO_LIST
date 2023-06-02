@@ -11,11 +11,15 @@ import ShowToDOBox from './ShowToDo/ShowToDoBox';
 
 const MainComponent  = ()=>{
 
+  const getinputData = (value)=>{
+     
+  }
+
    useState()
    
    return (
     <div className={style['main-component']}>
-        <GetUserInput />
+        <GetUserInput  onGetData={getinputData}/>
         <ShowToDOBox />
     </div>
   
